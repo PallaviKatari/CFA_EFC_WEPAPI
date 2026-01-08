@@ -11,6 +11,8 @@ builder.Services.AddControllers();
 //Registering the DbContext - AppDbContext
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+// ✅ Repository Pattern - ProductRepository
+builder.Services.AddScoped<ProductRepository>();
 
 // Swagger services
 builder.Services.AddEndpointsApiExplorer();
