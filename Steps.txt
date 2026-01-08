@@ -26,3 +26,7 @@
    - app.UseSwagger();
    - app.UseSwaggerUI();
    10. Run the Application - https://localhost:7197/swagger/index.html
+   11. Additional Configurations (Optional)
+    Add the following to launchSettings.json for Swagger UI on run to open automatically
+    "launchBrowser": true,
+    "launchUrl": "swagger/index.html",
