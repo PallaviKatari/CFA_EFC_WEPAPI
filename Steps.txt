@@ -1,0 +1,28 @@
+﻿﻿   1. Add the Packages
+   - Install the necessary NuGet packages for Entity Framework Core and your database provider (e.g., Microsoft.EntityFrameworkCore.SqlServer).
+   - Microsoft.EntityFrameworkCore,Microsoft.EntityFrameworkCore.SqlServer,Microsoft.EntityFrameworkCore.Tools,MIcrosoft.EntityFrameworkCore.Design
+   2. Create the DbContext
+   - Create a class that inherits from DbContext and define DbSet properties for your entities.
+   3. Configure the Connection String in appsettings.json
+   - Add your database connection string to the appsettings.json file.
+   4. Register the DbContext in Program.cs
+   - In the Program.cs file, register your DbContext with the dependency injection container using the connection string from appsettings.json.
+   5. Create Entity Classes - Product class in Models folder
+   - Define your entity classes that represent the tables in your database.(Id, Name, Price)
+   - Build your project to ensure everything is set up correctly.
+   6. Create and Apply Migrations - Tools 
+   - Use the Package Manager Console or CLI to create and apply migrations to set up your database schema - run commands like `Add-Migration` and `Update-Database`.
+   - dotnet ef migrations add InitialCreate or Add-Migration InitialCreate
+   - dotnet ef database update or Update-Database
+   7. Use the DbContext in Your Application
+   - Inject the DbContext into your services or controllers to perform database operations.
+   8. Test the Setup
+   9. Swagger Integration (Optional)
+   - If you're using Swagger for API documentation, ensure it's set up to document your endpoints that interact with the database.
+   - Install -Package Swashbuckle.AspNetCore
+   - Configure Swagger in Program.cs
+   - builder.Services.AddEndpointsApiExplorer();
+   - builder.Services.AddSwaggerGen();
+   - app.UseSwagger();
+   - app.UseSwaggerUI();
+   10. Run the Application - https://localhost:7197/swagger/index.html
